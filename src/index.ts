@@ -1,3 +1,6 @@
+import Database from "better-sqlite3";
+import { randomUUID } from "node:crypto";
+
 type EventSubscription = {
   type: string;
   version: string;
@@ -5,12 +8,37 @@ type EventSubscription = {
 };
 
 type EventSubMessage = {
-  metadata: { message_type: string; subscription_type?: string };
+  metadata: { message_type: string; subscription_type?: string; message_timestamp: string };
   payload: {
     session?: { id: string; reconnect_url: string | null };
     event?: unknown;
   };
 };
+
+const sessionId = randomUUID();
+const db = new Database("catchup.db");
+db.exec(`
+  CREATE TABLE IF NOT EXISTS messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id TEXT NOT NULL,
+    "user" TEXT,
+    text TEXT NOT NULL,
+    ts TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id TEXT NOT NULL,
+    type TEXT NOT NULL,
+    "user" TEXT,
+    ts TEXT NOT NULL
+  );
+`);
+const insertMessage = db.prepare(
+  'INSERT INTO messages (session_id, "user", text, ts) VALUES (?, ?, ?, ?)',
+);
+const insertEvent = db.prepare(
+  'INSERT INTO events (session_id, type, "user", ts) VALUES (?, ?, ?, ?)',
+);
 
 const requiredEnv = (name: string): string => {
   const value = process.env[name];
@@ -82,7 +110,22 @@ function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
         if (!sessionId) throw new Error("Twitch welcome message did not include a session ID");
         await subscribe(sessionId);
       } else if (messageType === "notification") {
-        console.log(subscriptionType, JSON.stringify(message.payload.event));
+        const event = message.payload.event as Record<string, unknown>;
+        const eventType = subscriptionType ?? "unknown";
+        const timestamp = message.metadata.message_timestamp;
+        const user = String(
+          event.chatter_user_name ??
+            event.user_name ??
+            event.from_broadcaster_user_name ??
+            "",
+        );
+
+        insertEvent.run(sessionId, eventType, user || null, timestamp);
+        if (eventType === "channel.chat.message") {
+          const chatMessage = event.message as { text?: string } | undefined;
+          insertMessage.run(sessionId, user || null, chatMessage?.text ?? "", timestamp);
+        }
+        console.log(eventType, JSON.stringify(event));
       } else if (messageType === "session_reconnect") {
         const reconnectUrl = message.payload.session?.reconnect_url;
         if (!reconnectUrl) throw new Error("Twitch reconnect message did not include a URL");
