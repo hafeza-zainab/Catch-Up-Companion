@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { db } from "./database.js";
 import { getRecap } from "./recap.js";
+import { publishRecap, startWebServer } from "./web.js";
 
 type EventSubscription = {
   type: string;
@@ -36,6 +37,7 @@ const clientId = requiredEnv("TWITCH_CLIENT_ID");
 const token = requiredEnv("TWITCH_TOKEN");
 const channelId = requiredEnv("CHANNEL_ID");
 const botId = requiredEnv("BOT_ID");
+startWebServer();
 
 const subscriptions: EventSubscription[] = [
   {
@@ -91,6 +93,8 @@ async function replyWithRecap(userId: string, parentMessageId: string): Promise<
 
   catchupCooldowns.set(userId, now + CATCHUP_COOLDOWN_MS);
   try {
+    const recap = await getRecap(sessionId);
+    publishRecap(recap);
     const response = await fetch("https://api.twitch.tv/helix/chat/messages", {
       method: "POST",
       headers: {
@@ -101,7 +105,7 @@ async function replyWithRecap(userId: string, parentMessageId: string): Promise<
       body: JSON.stringify({
         broadcaster_id: channelId,
         sender_id: botId,
-        message: (await getRecap(sessionId)).slice(0, 500),
+        message: recap.slice(0, 500),
         reply_parent_message_id: parentMessageId,
       }),
     });

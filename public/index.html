@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stream recap</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .stage {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0 28px 6vh;
+        pointer-events: none;
+      }
+
+      .card {
+        width: min(760px, 100%);
+        padding: 22px 26px 18px;
+        overflow: hidden;
+        border: 1px solid rgb(255 255 255 / 15%);
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgb(28 27 48 / 96%), rgb(17 20 34 / 96%));
+        box-shadow: 0 18px 60px rgb(0 0 0 / 38%), 0 0 32px rgb(145 87 255 / 16%);
+        color: #f7f5ff;
+        opacity: 0;
+        transform: translateY(18px) scale(.985);
+        transition: opacity 260ms ease, transform 260ms ease;
+      }
+
+      .card.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 12px;
+        color: #c7a9ff;
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #a970ff;
+        box-shadow: 0 0 12px #a970ff;
+        content: "";
+      }
+
+      .recap {
+        margin: 0;
+        color: #f3f1fa;
+        font-size: clamp(16px, 2.2vw, 21px);
+        font-weight: 520;
+        line-height: 1.55;
+        white-space: pre-line;
+      }
+
+      .timer {
+        height: 3px;
+        margin: 17px -26px -18px;
+        overflow: hidden;
+        background: rgb(255 255 255 / 8%);
+      }
+
+      .timer-fill {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #a970ff, #62d9ff);
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .timer-fill.running { animation: drain var(--duration, 15s) linear forwards; }
+
+      @keyframes drain { to { transform: scaleX(0); } }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage" aria-live="polite">
+      <section id="card" class="card" aria-label="Stream recap" hidden>
+        <h1 class="eyebrow">Stream catch-up</h1>
+        <p id="recap" class="recap"></p>
+        <div class="timer" aria-hidden="true"><div id="timer-fill" class="timer-fill"></div></div>
+      </section>
+    </main>
+    <script>
+      const card = document.getElementById("card");
+      const recap = document.getElementById("recap");
+      const timerFill = document.getElementById("timer-fill");
+      const events = new EventSource("/events");
+      let hideTimer;
+
+      events.addEventListener("recap", (event) => {
+        const { text, durationMs = 15000 } = JSON.parse(event.data);
+        recap.textContent = text;
+        card.hidden = false;
+        card.classList.remove("visible");
+        timerFill.classList.remove("running");
+        timerFill.style.setProperty("--duration", `${durationMs}ms`);
+        void card.offsetWidth;
+        card.classList.add("visible");
+        timerFill.classList.add("running");
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => {
+          card.classList.remove("visible");
+          setTimeout(() => {
+            if (!card.classList.contains("visible")) card.hidden = true;
+          }, 280);
+        }, durationMs);
+      });
+    </script>
+  </body>
+</html>
