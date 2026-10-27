@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { db } from "./database.js";
+import { getRecap } from "./recap.js";
 
 type EventSubscription = {
   type: string;
@@ -22,6 +23,8 @@ const insertMessage = db.prepare(
 const insertEvent = db.prepare(
   'INSERT INTO events (session_id, type, "user", ts) VALUES (?, ?, ?, ?)',
 );
+const catchupCooldowns = new Map<string, number>();
+const CATCHUP_COOLDOWN_MS = 60_000;
 
 const requiredEnv = (name: string): string => {
   const value = process.env[name];
@@ -79,6 +82,45 @@ async function subscribe(sessionId: string): Promise<void> {
   }
 }
 
+async function replyWithRecap(userId: string, parentMessageId: string): Promise<void> {
+  const now = Date.now();
+  for (const [id, expiresAt] of catchupCooldowns) {
+    if (expiresAt <= now) catchupCooldowns.delete(id);
+  }
+  if ((catchupCooldowns.get(userId) ?? 0) > now) return;
+
+  catchupCooldowns.set(userId, now + CATCHUP_COOLDOWN_MS);
+  try {
+    const response = await fetch("https://api.twitch.tv/helix/chat/messages", {
+      method: "POST",
+      headers: {
+        "Client-Id": clientId,
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        broadcaster_id: channelId,
+        sender_id: botId,
+        message: getRecap(sessionId).slice(0, 500),
+        reply_parent_message_id: parentMessageId,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Twitch chat API returned ${response.status}: ${await response.text()}`);
+    }
+    const result = (await response.json()) as {
+      data?: Array<{ is_sent: boolean; drop_reason?: { message?: string } | null }>;
+    };
+    if (result.data?.[0]?.is_sent === false) {
+      throw new Error(`Twitch did not send the recap: ${result.data[0].drop_reason?.message ?? "unknown reason"}`);
+    }
+  } catch (error) {
+    catchupCooldowns.delete(userId);
+    console.error("Failed to reply with recap:", error);
+  }
+}
+
 function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
   const socket = new WebSocket(url);
   let handoff = false;
@@ -106,7 +148,11 @@ function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
         insertEvent.run(sessionId, eventType, user || null, timestamp);
         if (eventType === "channel.chat.message") {
           const chatMessage = event.message as { text?: string } | undefined;
-          insertMessage.run(sessionId, user || null, chatMessage?.text ?? "", timestamp);
+          const text = chatMessage?.text ?? "";
+          insertMessage.run(sessionId, user || null, text, timestamp);
+          if (text.trim() === "!catchup" && event.chatter_user_id && event.message_id) {
+            await replyWithRecap(String(event.chatter_user_id), String(event.message_id));
+          }
         }
         console.log(eventType, JSON.stringify(event));
       } else if (messageType === "session_reconnect") {

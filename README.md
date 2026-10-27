@@ -9,6 +9,7 @@ A minimal TypeScript app that receives Twitch EventSub notifications over WebSoc
   - `user:read:chat`
   - `moderator:read:followers`
   - `channel:read:subscriptions`
+  - `user:write:chat`
 - The bot account must be a moderator in the channel for follow notifications. `BOT_ID` must match the user ID associated with `TWITCH_TOKEN`.
 
 ## Run
