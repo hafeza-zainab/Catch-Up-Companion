@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { db } from "./database.js";
+import { handleEventNotification } from "./eventHandler.js";
 import { getRecap } from "./recap.js";
 import { publishRecap, startWebServer } from "./web.js";
 
@@ -18,12 +18,6 @@ type EventSubMessage = {
 };
 
 const sessionId = randomUUID();
-const insertMessage = db.prepare(
-  'INSERT INTO messages (session_id, "user", text, ts) VALUES (?, ?, ?, ?)',
-);
-const insertEvent = db.prepare(
-  'INSERT INTO events (session_id, type, "user", ts) VALUES (?, ?, ?, ?)',
-);
 const catchupCooldowns = new Map<string, number>();
 const CATCHUP_COOLDOWN_MS = 60_000;
 
@@ -141,24 +135,13 @@ function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
       } else if (messageType === "notification") {
         const event = message.payload.event as Record<string, unknown>;
         const eventType = subscriptionType ?? "unknown";
-        const timestamp = message.metadata.message_timestamp;
-        const user = String(
-          event.chatter_user_name ??
-            event.user_name ??
-            event.from_broadcaster_user_name ??
-            "",
+        await handleEventNotification(
+          sessionId,
+          eventType,
+          event,
+          message.metadata.message_timestamp,
+          replyWithRecap,
         );
-
-        insertEvent.run(sessionId, eventType, user || null, timestamp);
-        if (eventType === "channel.chat.message") {
-          const chatMessage = event.message as { text?: string } | undefined;
-          const text = chatMessage?.text ?? "";
-          insertMessage.run(sessionId, user || null, text, timestamp);
-          if (text.trim() === "!catchup" && event.chatter_user_id && event.message_id) {
-            await replyWithRecap(String(event.chatter_user_id), String(event.message_id));
-          }
-        }
-        console.log(eventType, JSON.stringify(event));
       } else if (messageType === "session_reconnect") {
         const reconnectUrl = message.payload.session?.reconnect_url;
         if (!reconnectUrl) throw new Error("Twitch reconnect message did not include a URL");
