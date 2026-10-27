@@ -5,22 +5,36 @@ const CHAT_SPIKE_MIN_MESSAGES = 5;
 
 type MessageRow = { user: string | null; text: string; ts: string };
 type EventCounts = { type: string; count: number };
+type RecapData = {
+  topChatters: Array<{ user: string; count: number }>;
+  repeatedPhrases: Array<{ phrase: string; count: number }>;
+  chatRateSpike: string;
+  raids: number;
+  subs: number;
+};
 type RecapDatabase = {
   prepare(sql: string): { all(...params: unknown[]): unknown[] };
 };
 const require = createRequire(import.meta.url);
 
-export function getRecap(sessionId: string): string {
+export async function getRecap(sessionId: string): Promise<string> {
   const Sqlite = require("better-sqlite3") as new (filename: string) => RecapDatabase & { close(): void };
   const database = new Sqlite("catchup.db");
   try {
-    return getRecapFromDatabase(sessionId, database);
+    const data = collectRecapData(sessionId, database);
+    const template = formatRecap(data);
+    const apiKey = process.env.GEMINI_API_KEY;
+    return apiKey ? await polishRecap(data, apiKey, template) : template;
   } finally {
     database.close();
   }
 }
 
 export function getRecapFromDatabase(sessionId: string, database: RecapDatabase): string {
+  return formatRecap(collectRecapData(sessionId, database));
+}
+
+function collectRecapData(sessionId: string, database: RecapDatabase): RecapData {
   const topChatters = database
     .prepare(
       `SELECT "user" AS user, COUNT(*) AS count
@@ -44,7 +58,8 @@ export function getRecapFromDatabase(sessionId: string, database: RecapDatabase)
   const repeated = [...phraseCounts]
     .filter(([, count]) => count >= REPEAT_THRESHOLD)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-    .slice(0, 3);
+    .slice(0, 3)
+    .map(([phrase, count]) => ({ phrase, count }));
 
   const minuteCounts = new Map<number, number>();
   for (const { ts } of messages) {
@@ -76,19 +91,65 @@ export function getRecapFromDatabase(sessionId: string, database: RecapDatabase)
     .all(sessionId) as EventCounts[];
   const counts = new Map(eventCounts.map(({ type, count }) => [type, count]));
 
-  const chatterLine = topChatters.length
-    ? `Top chatters: ${topChatters.map(({ user, count }) => `${user} (${count})`).join(", ")}`
+  return {
+    topChatters,
+    repeatedPhrases: repeated,
+    chatRateSpike: spike,
+    raids: counts.get("channel.raid") ?? 0,
+    subs: counts.get("channel.subscribe") ?? 0,
+  };
+}
+
+function formatRecap(data: RecapData): string {
+  const chatterLine = data.topChatters.length
+    ? `Top chatters: ${data.topChatters.map(({ user, count }) => `${user} (${count})`).join(", ")}`
     : "Top chatters: none";
-  const repeatLine = repeated.length
-    ? `Repeated phrases/emotes (≥${REPEAT_THRESHOLD}): ${repeated
-        .map(([phrase, count]) => `${JSON.stringify(phrase)} ×${count}`)
+  const repeatLine = data.repeatedPhrases.length
+    ? `Repeated phrases/emotes (≥${REPEAT_THRESHOLD}): ${data.repeatedPhrases
+        .map(({ phrase, count }) => `${JSON.stringify(phrase)} ×${count}`)
         .join(", ")}`
     : `Repeated phrases/emotes (≥${REPEAT_THRESHOLD}): none`;
 
   return [
     chatterLine,
     repeatLine,
-    `Chat-rate spike: ${spike}`,
-    `Raids: ${counts.get("channel.raid") ?? 0}; subs: ${counts.get("channel.subscribe") ?? 0}`,
+    `Chat-rate spike: ${data.chatRateSpike}`,
+    `Raids: ${data.raids}; subs: ${data.subs}`,
   ].join("\n");
+}
+
+async function polishRecap(data: RecapData, apiKey: string, fallback: string): Promise<string> {
+  try {
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: `Write a friendly Twitch stream recap using only these facts: ${JSON.stringify(data)}. Return exactly 3 short lines of plain text, with no bullets or numbering. Do not invent details. Keep the entire response under 450 characters.`,
+                },
+              ],
+            },
+          ],
+          generationConfig: { maxOutputTokens: 120, temperature: 0.4 },
+        }),
+        signal: AbortSignal.timeout(5_000),
+      },
+    );
+    if (!response.ok) throw new Error(`Gemini API returned ${response.status}`);
+
+    const result = (await response.json()) as {
+      candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+    };
+    const text = result.candidates?.[0]?.content?.parts?.map(({ text: part }) => part ?? "").join("").trim();
+    if (!text || text.length > 500) return fallback;
+    const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    return lines.length === 3 ? lines.join("\n") : fallback;
+  } catch {
+    return fallback;
+  }
 }

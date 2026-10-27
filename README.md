@@ -21,3 +21,5 @@ A minimal TypeScript app that receives Twitch EventSub notifications over WebSoc
 To build and run the compiled app, use `npm run build` followed by `npm start`.
 
 Each EventSub notification is printed with its subscription type and JSON event payload. Twitch must be able to validate the token's scopes; the app creates each subscription after the WebSocket session is welcomed.
+
+To enable optional recap polishing, set `GEMINI_API_KEY` in `.env`. Without it, the bot uses the plain recap template. When set, recap metrics and repeated chat text are sent to Google's Gemini API; errors and timeouts fall back to the template.

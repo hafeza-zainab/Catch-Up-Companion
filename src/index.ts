@@ -101,7 +101,7 @@ async function replyWithRecap(userId: string, parentMessageId: string): Promise<
       body: JSON.stringify({
         broadcaster_id: channelId,
         sender_id: botId,
-        message: getRecap(sessionId).slice(0, 500),
+        message: (await getRecap(sessionId)).slice(0, 500),
         reply_parent_message_id: parentMessageId,
       }),
     });
