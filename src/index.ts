@@ -1,5 +1,5 @@
-import Database from "better-sqlite3";
 import { randomUUID } from "node:crypto";
+import { db } from "./database.js";
 
 type EventSubscription = {
   type: string;
@@ -16,23 +16,6 @@ type EventSubMessage = {
 };
 
 const sessionId = randomUUID();
-const db = new Database("catchup.db");
-db.exec(`
-  CREATE TABLE IF NOT EXISTS messages (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    session_id TEXT NOT NULL,
-    "user" TEXT,
-    text TEXT NOT NULL,
-    ts TEXT NOT NULL
-  );
-  CREATE TABLE IF NOT EXISTS events (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    session_id TEXT NOT NULL,
-    type TEXT NOT NULL,
-    "user" TEXT,
-    ts TEXT NOT NULL
-  );
-`);
 const insertMessage = db.prepare(
   'INSERT INTO messages (session_id, "user", text, ts) VALUES (?, ?, ?, ?)',
 );
