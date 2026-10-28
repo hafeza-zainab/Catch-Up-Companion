@@ -160,7 +160,7 @@ async function main() {
     console.log("Preparing Playwright Chromium (free, Chromium only)...");
     await runNpm(["exec", "--yes", "--package=playwright", "--", "playwright", "install", "chromium"]);
     await screenshot("overlay-1.png", 1_000);
-    await screenshot("overlay-2.png", 15_650);
+    await screenshot("overlay-2.png", 7_000);
     console.log(`Saved screenshots to ${path.relative(root, framesDirectory)}.`);
   } finally {
     if (captureServer?.listening) await close(captureServer);
