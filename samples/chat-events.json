@@ -3,7 +3,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:00.000Z"
+      "message_timestamp": "2026-10-27T12:00:00Z"
     },
     "payload": {
       "event": {
@@ -24,7 +24,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:04.000Z"
+      "message_timestamp": "2026-10-27T12:00:04Z"
     },
     "payload": {
       "event": {
@@ -45,7 +45,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:08.000Z"
+      "message_timestamp": "2026-10-27T12:00:08Z"
     },
     "payload": {
       "event": {
@@ -66,7 +66,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:12.000Z"
+      "message_timestamp": "2026-10-27T12:00:12Z"
     },
     "payload": {
       "event": {
@@ -87,7 +87,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:16.000Z"
+      "message_timestamp": "2026-10-27T12:00:16Z"
     },
     "payload": {
       "event": {
@@ -108,7 +108,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:20.000Z"
+      "message_timestamp": "2026-10-27T12:00:20Z"
     },
     "payload": {
       "event": {
@@ -129,7 +129,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:24.000Z"
+      "message_timestamp": "2026-10-27T12:00:24Z"
     },
     "payload": {
       "event": {
@@ -150,7 +150,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:28.000Z"
+      "message_timestamp": "2026-10-27T12:00:28Z"
     },
     "payload": {
       "event": {
@@ -171,7 +171,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:32.000Z"
+      "message_timestamp": "2026-10-27T12:00:32Z"
     },
     "payload": {
       "event": {
@@ -192,7 +192,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:36.000Z"
+      "message_timestamp": "2026-10-27T12:00:36Z"
     },
     "payload": {
       "event": {
@@ -213,7 +213,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:40.000Z"
+      "message_timestamp": "2026-10-27T12:00:40Z"
     },
     "payload": {
       "event": {
@@ -234,7 +234,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:44.000Z"
+      "message_timestamp": "2026-10-27T12:00:44Z"
     },
     "payload": {
       "event": {
@@ -255,7 +255,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:48.000Z"
+      "message_timestamp": "2026-10-27T12:00:48Z"
     },
     "payload": {
       "event": {
@@ -276,7 +276,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:52.000Z"
+      "message_timestamp": "2026-10-27T12:00:52Z"
     },
     "payload": {
       "event": {
@@ -297,7 +297,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:00:56.000Z"
+      "message_timestamp": "2026-10-27T12:00:56Z"
     },
     "payload": {
       "event": {
@@ -318,7 +318,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:00.000Z"
+      "message_timestamp": "2026-10-27T12:01:00Z"
     },
     "payload": {
       "event": {
@@ -339,7 +339,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:04.000Z"
+      "message_timestamp": "2026-10-27T12:01:04Z"
     },
     "payload": {
       "event": {
@@ -360,7 +360,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:08.000Z"
+      "message_timestamp": "2026-10-27T12:01:08Z"
     },
     "payload": {
       "event": {
@@ -381,7 +381,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:12.000Z"
+      "message_timestamp": "2026-10-27T12:01:12Z"
     },
     "payload": {
       "event": {
@@ -402,7 +402,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:16.000Z"
+      "message_timestamp": "2026-10-27T12:01:16Z"
     },
     "payload": {
       "event": {
@@ -423,7 +423,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:20.000Z"
+      "message_timestamp": "2026-10-27T12:01:20Z"
     },
     "payload": {
       "event": {
@@ -444,7 +444,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:24.000Z"
+      "message_timestamp": "2026-10-27T12:01:24Z"
     },
     "payload": {
       "event": {
@@ -465,7 +465,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:28.000Z"
+      "message_timestamp": "2026-10-27T12:01:28Z"
     },
     "payload": {
       "event": {
@@ -486,7 +486,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:32.000Z"
+      "message_timestamp": "2026-10-27T12:01:32Z"
     },
     "payload": {
       "event": {
@@ -507,7 +507,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:36.000Z"
+      "message_timestamp": "2026-10-27T12:01:36Z"
     },
     "payload": {
       "event": {
@@ -528,7 +528,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:40.000Z"
+      "message_timestamp": "2026-10-27T12:01:40Z"
     },
     "payload": {
       "event": {
@@ -549,7 +549,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:44.000Z"
+      "message_timestamp": "2026-10-27T12:01:44Z"
     },
     "payload": {
       "event": {
@@ -570,7 +570,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:48.000Z"
+      "message_timestamp": "2026-10-27T12:01:48Z"
     },
     "payload": {
       "event": {
@@ -591,7 +591,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:52.000Z"
+      "message_timestamp": "2026-10-27T12:01:52Z"
     },
     "payload": {
       "event": {
@@ -612,7 +612,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:01:56.000Z"
+      "message_timestamp": "2026-10-27T12:01:56Z"
     },
     "payload": {
       "event": {
@@ -633,7 +633,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:00.000Z"
+      "message_timestamp": "2026-10-27T12:02:00Z"
     },
     "payload": {
       "event": {
@@ -654,7 +654,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:04.000Z"
+      "message_timestamp": "2026-10-27T12:02:04Z"
     },
     "payload": {
       "event": {
@@ -675,7 +675,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:08.000Z"
+      "message_timestamp": "2026-10-27T12:02:08Z"
     },
     "payload": {
       "event": {
@@ -696,7 +696,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:12.000Z"
+      "message_timestamp": "2026-10-27T12:02:12Z"
     },
     "payload": {
       "event": {
@@ -717,7 +717,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:16.000Z"
+      "message_timestamp": "2026-10-27T12:02:16Z"
     },
     "payload": {
       "event": {
@@ -738,7 +738,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:20.000Z"
+      "message_timestamp": "2026-10-27T12:02:20Z"
     },
     "payload": {
       "event": {
@@ -759,7 +759,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:24.000Z"
+      "message_timestamp": "2026-10-27T12:02:24Z"
     },
     "payload": {
       "event": {
@@ -780,7 +780,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:28.000Z"
+      "message_timestamp": "2026-10-27T12:02:28Z"
     },
     "payload": {
       "event": {
@@ -801,7 +801,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:32.000Z"
+      "message_timestamp": "2026-10-27T12:02:32Z"
     },
     "payload": {
       "event": {
@@ -822,7 +822,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:36.000Z"
+      "message_timestamp": "2026-10-27T12:02:36Z"
     },
     "payload": {
       "event": {
@@ -843,7 +843,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:40.000Z"
+      "message_timestamp": "2026-10-27T12:02:40Z"
     },
     "payload": {
       "event": {
@@ -864,7 +864,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:44.000Z"
+      "message_timestamp": "2026-10-27T12:02:44Z"
     },
     "payload": {
       "event": {
@@ -885,7 +885,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:48.000Z"
+      "message_timestamp": "2026-10-27T12:02:48Z"
     },
     "payload": {
       "event": {
@@ -906,7 +906,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:52.000Z"
+      "message_timestamp": "2026-10-27T12:02:52Z"
     },
     "payload": {
       "event": {
@@ -927,7 +927,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:02:56.000Z"
+      "message_timestamp": "2026-10-27T12:02:56Z"
     },
     "payload": {
       "event": {
@@ -948,7 +948,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:00.000Z"
+      "message_timestamp": "2026-10-27T12:03:00Z"
     },
     "payload": {
       "event": {
@@ -969,7 +969,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:04.000Z"
+      "message_timestamp": "2026-10-27T12:03:04Z"
     },
     "payload": {
       "event": {
@@ -990,7 +990,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:08.000Z"
+      "message_timestamp": "2026-10-27T12:03:08Z"
     },
     "payload": {
       "event": {
@@ -1011,7 +1011,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:12.000Z"
+      "message_timestamp": "2026-10-27T12:03:12Z"
     },
     "payload": {
       "event": {
@@ -1032,7 +1032,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:16.000Z"
+      "message_timestamp": "2026-10-27T12:03:16Z"
     },
     "payload": {
       "event": {
@@ -1053,7 +1053,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.raid",
-      "message_timestamp": "2026-10-27T12:03:19.000Z"
+      "message_timestamp": "2026-10-27T12:03:19Z"
     },
     "payload": {
       "event": {
@@ -1071,7 +1071,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:20.000Z"
+      "message_timestamp": "2026-10-27T12:03:20Z"
     },
     "payload": {
       "event": {
@@ -1092,7 +1092,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:24.000Z"
+      "message_timestamp": "2026-10-27T12:03:24Z"
     },
     "payload": {
       "event": {
@@ -1113,7 +1113,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:28.000Z"
+      "message_timestamp": "2026-10-27T12:03:28Z"
     },
     "payload": {
       "event": {
@@ -1134,7 +1134,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:32.000Z"
+      "message_timestamp": "2026-10-27T12:03:32Z"
     },
     "payload": {
       "event": {
@@ -1155,7 +1155,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:36.000Z"
+      "message_timestamp": "2026-10-27T12:03:36Z"
     },
     "payload": {
       "event": {
@@ -1176,7 +1176,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:40.000Z"
+      "message_timestamp": "2026-10-27T12:03:40Z"
     },
     "payload": {
       "event": {
@@ -1197,7 +1197,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:44.000Z"
+      "message_timestamp": "2026-10-27T12:03:44Z"
     },
     "payload": {
       "event": {
@@ -1218,7 +1218,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:48.000Z"
+      "message_timestamp": "2026-10-27T12:03:48Z"
     },
     "payload": {
       "event": {
@@ -1239,7 +1239,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:52.000Z"
+      "message_timestamp": "2026-10-27T12:03:52Z"
     },
     "payload": {
       "event": {
@@ -1260,7 +1260,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:03:56.000Z"
+      "message_timestamp": "2026-10-27T12:03:56Z"
     },
     "payload": {
       "event": {
@@ -1281,7 +1281,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:00.000Z"
+      "message_timestamp": "2026-10-27T12:04:00Z"
     },
     "payload": {
       "event": {
@@ -1302,7 +1302,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:04.000Z"
+      "message_timestamp": "2026-10-27T12:04:04Z"
     },
     "payload": {
       "event": {
@@ -1323,7 +1323,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:08.000Z"
+      "message_timestamp": "2026-10-27T12:04:08Z"
     },
     "payload": {
       "event": {
@@ -1344,7 +1344,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:12.000Z"
+      "message_timestamp": "2026-10-27T12:04:12Z"
     },
     "payload": {
       "event": {
@@ -1365,7 +1365,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:16.000Z"
+      "message_timestamp": "2026-10-27T12:04:16Z"
     },
     "payload": {
       "event": {
@@ -1386,7 +1386,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:20.000Z"
+      "message_timestamp": "2026-10-27T12:04:20Z"
     },
     "payload": {
       "event": {
@@ -1407,7 +1407,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:24.000Z"
+      "message_timestamp": "2026-10-27T12:04:24Z"
     },
     "payload": {
       "event": {
@@ -1428,7 +1428,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:28.000Z"
+      "message_timestamp": "2026-10-27T12:04:28Z"
     },
     "payload": {
       "event": {
@@ -1449,7 +1449,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:32.000Z"
+      "message_timestamp": "2026-10-27T12:04:32Z"
     },
     "payload": {
       "event": {
@@ -1470,7 +1470,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:36.000Z"
+      "message_timestamp": "2026-10-27T12:04:36Z"
     },
     "payload": {
       "event": {
@@ -1491,7 +1491,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:40.000Z"
+      "message_timestamp": "2026-10-27T12:04:40Z"
     },
     "payload": {
       "event": {
@@ -1512,7 +1512,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:44.000Z"
+      "message_timestamp": "2026-10-27T12:04:44Z"
     },
     "payload": {
       "event": {
@@ -1533,7 +1533,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:48.000Z"
+      "message_timestamp": "2026-10-27T12:04:48Z"
     },
     "payload": {
       "event": {
@@ -1554,7 +1554,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:52.000Z"
+      "message_timestamp": "2026-10-27T12:04:52Z"
     },
     "payload": {
       "event": {
@@ -1575,7 +1575,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:04:56.000Z"
+      "message_timestamp": "2026-10-27T12:04:56Z"
     },
     "payload": {
       "event": {
@@ -1596,7 +1596,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:00.000Z"
+      "message_timestamp": "2026-10-27T12:05:00Z"
     },
     "payload": {
       "event": {
@@ -1617,7 +1617,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:04.000Z"
+      "message_timestamp": "2026-10-27T12:05:04Z"
     },
     "payload": {
       "event": {
@@ -1638,7 +1638,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:08.000Z"
+      "message_timestamp": "2026-10-27T12:05:08Z"
     },
     "payload": {
       "event": {
@@ -1659,7 +1659,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:12.000Z"
+      "message_timestamp": "2026-10-27T12:05:12Z"
     },
     "payload": {
       "event": {
@@ -1680,7 +1680,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:16.000Z"
+      "message_timestamp": "2026-10-27T12:05:16Z"
     },
     "payload": {
       "event": {
@@ -1701,7 +1701,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:20.000Z"
+      "message_timestamp": "2026-10-27T12:05:20Z"
     },
     "payload": {
       "event": {
@@ -1722,7 +1722,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:24.000Z"
+      "message_timestamp": "2026-10-27T12:05:24Z"
     },
     "payload": {
       "event": {
@@ -1743,7 +1743,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:28.000Z"
+      "message_timestamp": "2026-10-27T12:05:28Z"
     },
     "payload": {
       "event": {
@@ -1764,7 +1764,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:32.000Z"
+      "message_timestamp": "2026-10-27T12:05:32Z"
     },
     "payload": {
       "event": {
@@ -1785,7 +1785,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:36.000Z"
+      "message_timestamp": "2026-10-27T12:05:36Z"
     },
     "payload": {
       "event": {
@@ -1806,7 +1806,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:40.000Z"
+      "message_timestamp": "2026-10-27T12:05:40Z"
     },
     "payload": {
       "event": {
@@ -1827,7 +1827,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:44.000Z"
+      "message_timestamp": "2026-10-27T12:05:44Z"
     },
     "payload": {
       "event": {
@@ -1848,7 +1848,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:48.000Z"
+      "message_timestamp": "2026-10-27T12:05:48Z"
     },
     "payload": {
       "event": {
@@ -1869,7 +1869,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:52.000Z"
+      "message_timestamp": "2026-10-27T12:05:52Z"
     },
     "payload": {
       "event": {
@@ -1890,7 +1890,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:05:56.000Z"
+      "message_timestamp": "2026-10-27T12:05:56Z"
     },
     "payload": {
       "event": {
@@ -1911,7 +1911,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:00.000Z"
+      "message_timestamp": "2026-10-27T12:06:00Z"
     },
     "payload": {
       "event": {
@@ -1932,7 +1932,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:04.000Z"
+      "message_timestamp": "2026-10-27T12:06:04Z"
     },
     "payload": {
       "event": {
@@ -1953,7 +1953,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:08.000Z"
+      "message_timestamp": "2026-10-27T12:06:08Z"
     },
     "payload": {
       "event": {
@@ -1974,7 +1974,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:12.000Z"
+      "message_timestamp": "2026-10-27T12:06:12Z"
     },
     "payload": {
       "event": {
@@ -1995,7 +1995,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:16.000Z"
+      "message_timestamp": "2026-10-27T12:06:16Z"
     },
     "payload": {
       "event": {
@@ -2016,7 +2016,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:20.000Z"
+      "message_timestamp": "2026-10-27T12:06:20Z"
     },
     "payload": {
       "event": {
@@ -2037,7 +2037,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:24.000Z"
+      "message_timestamp": "2026-10-27T12:06:24Z"
     },
     "payload": {
       "event": {
@@ -2058,7 +2058,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:28.000Z"
+      "message_timestamp": "2026-10-27T12:06:28Z"
     },
     "payload": {
       "event": {
@@ -2079,7 +2079,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:32.000Z"
+      "message_timestamp": "2026-10-27T12:06:32Z"
     },
     "payload": {
       "event": {
@@ -2100,7 +2100,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:36.000Z"
+      "message_timestamp": "2026-10-27T12:06:36Z"
     },
     "payload": {
       "event": {
@@ -2121,7 +2121,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:40.000Z"
+      "message_timestamp": "2026-10-27T12:06:40Z"
     },
     "payload": {
       "event": {
@@ -2142,7 +2142,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:44.000Z"
+      "message_timestamp": "2026-10-27T12:06:44Z"
     },
     "payload": {
       "event": {
@@ -2163,7 +2163,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:48.000Z"
+      "message_timestamp": "2026-10-27T12:06:48Z"
     },
     "payload": {
       "event": {
@@ -2184,7 +2184,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:52.000Z"
+      "message_timestamp": "2026-10-27T12:06:52Z"
     },
     "payload": {
       "event": {
@@ -2205,7 +2205,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:06:56.000Z"
+      "message_timestamp": "2026-10-27T12:06:56Z"
     },
     "payload": {
       "event": {
@@ -2226,7 +2226,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:00.000Z"
+      "message_timestamp": "2026-10-27T12:07:00Z"
     },
     "payload": {
       "event": {
@@ -2247,7 +2247,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:04.000Z"
+      "message_timestamp": "2026-10-27T12:07:04Z"
     },
     "payload": {
       "event": {
@@ -2268,7 +2268,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:08.000Z"
+      "message_timestamp": "2026-10-27T12:07:08Z"
     },
     "payload": {
       "event": {
@@ -2289,7 +2289,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:12.000Z"
+      "message_timestamp": "2026-10-27T12:07:12Z"
     },
     "payload": {
       "event": {
@@ -2310,7 +2310,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:16.000Z"
+      "message_timestamp": "2026-10-27T12:07:16Z"
     },
     "payload": {
       "event": {
@@ -2331,7 +2331,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.raid",
-      "message_timestamp": "2026-10-27T12:07:19.000Z"
+      "message_timestamp": "2026-10-27T12:07:19Z"
     },
     "payload": {
       "event": {
@@ -2349,7 +2349,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:20.000Z"
+      "message_timestamp": "2026-10-27T12:07:20Z"
     },
     "payload": {
       "event": {
@@ -2370,7 +2370,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:24.000Z"
+      "message_timestamp": "2026-10-27T12:07:24Z"
     },
     "payload": {
       "event": {
@@ -2391,7 +2391,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:28.000Z"
+      "message_timestamp": "2026-10-27T12:07:28Z"
     },
     "payload": {
       "event": {
@@ -2412,7 +2412,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:32.000Z"
+      "message_timestamp": "2026-10-27T12:07:32Z"
     },
     "payload": {
       "event": {
@@ -2433,7 +2433,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:36.000Z"
+      "message_timestamp": "2026-10-27T12:07:36Z"
     },
     "payload": {
       "event": {
@@ -2454,7 +2454,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:40.000Z"
+      "message_timestamp": "2026-10-27T12:07:40Z"
     },
     "payload": {
       "event": {
@@ -2475,7 +2475,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:44.000Z"
+      "message_timestamp": "2026-10-27T12:07:44Z"
     },
     "payload": {
       "event": {
@@ -2496,7 +2496,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:48.000Z"
+      "message_timestamp": "2026-10-27T12:07:48Z"
     },
     "payload": {
       "event": {
@@ -2517,7 +2517,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:52.000Z"
+      "message_timestamp": "2026-10-27T12:07:52Z"
     },
     "payload": {
       "event": {
@@ -2538,7 +2538,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:07:56.000Z"
+      "message_timestamp": "2026-10-27T12:07:56Z"
     },
     "payload": {
       "event": {
@@ -2559,7 +2559,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:00.000Z"
+      "message_timestamp": "2026-10-27T12:08:00Z"
     },
     "payload": {
       "event": {
@@ -2580,7 +2580,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:04.000Z"
+      "message_timestamp": "2026-10-27T12:08:04Z"
     },
     "payload": {
       "event": {
@@ -2601,7 +2601,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:08.000Z"
+      "message_timestamp": "2026-10-27T12:08:08Z"
     },
     "payload": {
       "event": {
@@ -2622,7 +2622,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:12.000Z"
+      "message_timestamp": "2026-10-27T12:08:12Z"
     },
     "payload": {
       "event": {
@@ -2643,7 +2643,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:16.000Z"
+      "message_timestamp": "2026-10-27T12:08:16Z"
     },
     "payload": {
       "event": {
@@ -2664,7 +2664,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:20.000Z"
+      "message_timestamp": "2026-10-27T12:08:20Z"
     },
     "payload": {
       "event": {
@@ -2685,7 +2685,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:24.000Z"
+      "message_timestamp": "2026-10-27T12:08:24Z"
     },
     "payload": {
       "event": {
@@ -2706,7 +2706,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:28.000Z"
+      "message_timestamp": "2026-10-27T12:08:28Z"
     },
     "payload": {
       "event": {
@@ -2727,7 +2727,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:32.000Z"
+      "message_timestamp": "2026-10-27T12:08:32Z"
     },
     "payload": {
       "event": {
@@ -2748,7 +2748,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:36.000Z"
+      "message_timestamp": "2026-10-27T12:08:36Z"
     },
     "payload": {
       "event": {
@@ -2769,7 +2769,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:40.000Z"
+      "message_timestamp": "2026-10-27T12:08:40Z"
     },
     "payload": {
       "event": {
@@ -2790,7 +2790,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:44.000Z"
+      "message_timestamp": "2026-10-27T12:08:44Z"
     },
     "payload": {
       "event": {
@@ -2811,7 +2811,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:48.000Z"
+      "message_timestamp": "2026-10-27T12:08:48Z"
     },
     "payload": {
       "event": {
@@ -2832,7 +2832,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:52.000Z"
+      "message_timestamp": "2026-10-27T12:08:52Z"
     },
     "payload": {
       "event": {
@@ -2853,7 +2853,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:08:56.000Z"
+      "message_timestamp": "2026-10-27T12:08:56Z"
     },
     "payload": {
       "event": {
@@ -2874,7 +2874,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:00.000Z"
+      "message_timestamp": "2026-10-27T12:09:00Z"
     },
     "payload": {
       "event": {
@@ -2895,7 +2895,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:04.000Z"
+      "message_timestamp": "2026-10-27T12:09:04Z"
     },
     "payload": {
       "event": {
@@ -2916,7 +2916,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:08.000Z"
+      "message_timestamp": "2026-10-27T12:09:08Z"
     },
     "payload": {
       "event": {
@@ -2937,7 +2937,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:12.000Z"
+      "message_timestamp": "2026-10-27T12:09:12Z"
     },
     "payload": {
       "event": {
@@ -2958,7 +2958,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:16.000Z"
+      "message_timestamp": "2026-10-27T12:09:16Z"
     },
     "payload": {
       "event": {
@@ -2979,7 +2979,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:20.000Z"
+      "message_timestamp": "2026-10-27T12:09:20Z"
     },
     "payload": {
       "event": {
@@ -3000,7 +3000,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:24.000Z"
+      "message_timestamp": "2026-10-27T12:09:24Z"
     },
     "payload": {
       "event": {
@@ -3021,7 +3021,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:28.000Z"
+      "message_timestamp": "2026-10-27T12:09:28Z"
     },
     "payload": {
       "event": {
@@ -3042,7 +3042,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:32.000Z"
+      "message_timestamp": "2026-10-27T12:09:32Z"
     },
     "payload": {
       "event": {
@@ -3063,7 +3063,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:36.000Z"
+      "message_timestamp": "2026-10-27T12:09:36Z"
     },
     "payload": {
       "event": {
@@ -3084,7 +3084,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:40.000Z"
+      "message_timestamp": "2026-10-27T12:09:40Z"
     },
     "payload": {
       "event": {
@@ -3105,7 +3105,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:44.000Z"
+      "message_timestamp": "2026-10-27T12:09:44Z"
     },
     "payload": {
       "event": {
@@ -3126,7 +3126,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:48.000Z"
+      "message_timestamp": "2026-10-27T12:09:48Z"
     },
     "payload": {
       "event": {
@@ -3147,7 +3147,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:52.000Z"
+      "message_timestamp": "2026-10-27T12:09:52Z"
     },
     "payload": {
       "event": {
@@ -3168,7 +3168,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:09:56.000Z"
+      "message_timestamp": "2026-10-27T12:09:56Z"
     },
     "payload": {
       "event": {
@@ -3189,7 +3189,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:00.000Z"
+      "message_timestamp": "2026-10-27T12:10:00Z"
     },
     "payload": {
       "event": {
@@ -3210,7 +3210,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:04.000Z"
+      "message_timestamp": "2026-10-27T12:10:04Z"
     },
     "payload": {
       "event": {
@@ -3231,7 +3231,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:08.000Z"
+      "message_timestamp": "2026-10-27T12:10:08Z"
     },
     "payload": {
       "event": {
@@ -3252,7 +3252,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:12.000Z"
+      "message_timestamp": "2026-10-27T12:10:12Z"
     },
     "payload": {
       "event": {
@@ -3273,7 +3273,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:16.000Z"
+      "message_timestamp": "2026-10-27T12:10:16Z"
     },
     "payload": {
       "event": {
@@ -3294,7 +3294,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:20.000Z"
+      "message_timestamp": "2026-10-27T12:10:20Z"
     },
     "payload": {
       "event": {
@@ -3315,7 +3315,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:24.000Z"
+      "message_timestamp": "2026-10-27T12:10:24Z"
     },
     "payload": {
       "event": {
@@ -3336,7 +3336,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:28.000Z"
+      "message_timestamp": "2026-10-27T12:10:28Z"
     },
     "payload": {
       "event": {
@@ -3357,7 +3357,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:32.000Z"
+      "message_timestamp": "2026-10-27T12:10:32Z"
     },
     "payload": {
       "event": {
@@ -3378,7 +3378,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:36.000Z"
+      "message_timestamp": "2026-10-27T12:10:36Z"
     },
     "payload": {
       "event": {
@@ -3399,7 +3399,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:40.000Z"
+      "message_timestamp": "2026-10-27T12:10:40Z"
     },
     "payload": {
       "event": {
@@ -3420,7 +3420,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:44.000Z"
+      "message_timestamp": "2026-10-27T12:10:44Z"
     },
     "payload": {
       "event": {
@@ -3441,7 +3441,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:48.000Z"
+      "message_timestamp": "2026-10-27T12:10:48Z"
     },
     "payload": {
       "event": {
@@ -3462,7 +3462,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:52.000Z"
+      "message_timestamp": "2026-10-27T12:10:52Z"
     },
     "payload": {
       "event": {
@@ -3483,7 +3483,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:10:56.000Z"
+      "message_timestamp": "2026-10-27T12:10:56Z"
     },
     "payload": {
       "event": {
@@ -3504,7 +3504,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:00.000Z"
+      "message_timestamp": "2026-10-27T12:11:00Z"
     },
     "payload": {
       "event": {
@@ -3525,7 +3525,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:04.000Z"
+      "message_timestamp": "2026-10-27T12:11:04Z"
     },
     "payload": {
       "event": {
@@ -3546,7 +3546,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:08.000Z"
+      "message_timestamp": "2026-10-27T12:11:08Z"
     },
     "payload": {
       "event": {
@@ -3567,7 +3567,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:12.000Z"
+      "message_timestamp": "2026-10-27T12:11:12Z"
     },
     "payload": {
       "event": {
@@ -3588,7 +3588,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:16.000Z"
+      "message_timestamp": "2026-10-27T12:11:16Z"
     },
     "payload": {
       "event": {
@@ -3609,7 +3609,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.raid",
-      "message_timestamp": "2026-10-27T12:11:19.000Z"
+      "message_timestamp": "2026-10-27T12:11:19Z"
     },
     "payload": {
       "event": {
@@ -3634,6 +3634,846 @@
         "broadcaster_user_id": "10000001",
         "broadcaster_user_login": "samplechannel",
         "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "42",
+        "chatter_user_login": "mossymoth",
+        "chatter_user_name": "MossyMoth",
+        "message_id": "sample-spike-001",
+        "message": {
+          "text": "Welcome raiders, viewer 01!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:20.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "77",
+        "chatter_user_login": "pixelpilot",
+        "chatter_user_name": "PixelPilot",
+        "message_id": "sample-spike-002",
+        "message": {
+          "text": "Welcome raiders, viewer 02!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:20.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "103",
+        "chatter_user_login": "juniper",
+        "chatter_user_name": "Juniper",
+        "message_id": "sample-spike-003",
+        "message": {
+          "text": "Welcome raiders, viewer 03!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:20.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "208",
+        "chatter_user_login": "noodlewizard",
+        "chatter_user_name": "NoodleWizard",
+        "message_id": "sample-spike-004",
+        "message": {
+          "text": "Welcome raiders, viewer 04!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:21.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "315",
+        "chatter_user_login": "orbitowl",
+        "chatter_user_name": "OrbitOwl",
+        "message_id": "sample-spike-005",
+        "message": {
+          "text": "Welcome raiders, viewer 05!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:21.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "412",
+        "chatter_user_login": "teaandtactics",
+        "chatter_user_name": "TeaAndTactics",
+        "message_id": "sample-spike-006",
+        "message": {
+          "text": "Welcome raiders, viewer 06!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:21.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "599",
+        "chatter_user_login": "cloudyday",
+        "chatter_user_name": "CloudyDay",
+        "message_id": "sample-spike-007",
+        "message": {
+          "text": "Welcome raiders, viewer 07!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:21.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "620",
+        "chatter_user_login": "bytesized",
+        "chatter_user_name": "ByteSized",
+        "message_id": "sample-spike-008",
+        "message": {
+          "text": "Welcome raiders, viewer 08!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:22.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "42",
+        "chatter_user_login": "mossymoth",
+        "chatter_user_name": "MossyMoth",
+        "message_id": "sample-spike-009",
+        "message": {
+          "text": "Welcome raiders, viewer 09!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:22.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "77",
+        "chatter_user_login": "pixelpilot",
+        "chatter_user_name": "PixelPilot",
+        "message_id": "sample-spike-010",
+        "message": {
+          "text": "Welcome raiders, viewer 10!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:22.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "103",
+        "chatter_user_login": "juniper",
+        "chatter_user_name": "Juniper",
+        "message_id": "sample-spike-011",
+        "message": {
+          "text": "Welcome raiders, viewer 11!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:22.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "208",
+        "chatter_user_login": "noodlewizard",
+        "chatter_user_name": "NoodleWizard",
+        "message_id": "sample-spike-012",
+        "message": {
+          "text": "Welcome raiders, viewer 12!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:23.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "315",
+        "chatter_user_login": "orbitowl",
+        "chatter_user_name": "OrbitOwl",
+        "message_id": "sample-spike-013",
+        "message": {
+          "text": "Welcome raiders, viewer 13!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:23.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "412",
+        "chatter_user_login": "teaandtactics",
+        "chatter_user_name": "TeaAndTactics",
+        "message_id": "sample-spike-014",
+        "message": {
+          "text": "Welcome raiders, viewer 14!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:23.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "599",
+        "chatter_user_login": "cloudyday",
+        "chatter_user_name": "CloudyDay",
+        "message_id": "sample-spike-015",
+        "message": {
+          "text": "Welcome raiders, viewer 15!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:23.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "620",
+        "chatter_user_login": "bytesized",
+        "chatter_user_name": "ByteSized",
+        "message_id": "sample-spike-016",
+        "message": {
+          "text": "Welcome raiders, viewer 16!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:24.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "42",
+        "chatter_user_login": "mossymoth",
+        "chatter_user_name": "MossyMoth",
+        "message_id": "sample-spike-017",
+        "message": {
+          "text": "Welcome raiders, viewer 17!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:24.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "77",
+        "chatter_user_login": "pixelpilot",
+        "chatter_user_name": "PixelPilot",
+        "message_id": "sample-spike-018",
+        "message": {
+          "text": "Welcome raiders, viewer 18!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:24.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "103",
+        "chatter_user_login": "juniper",
+        "chatter_user_name": "Juniper",
+        "message_id": "sample-spike-019",
+        "message": {
+          "text": "Welcome raiders, viewer 19!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:24.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "208",
+        "chatter_user_login": "noodlewizard",
+        "chatter_user_name": "NoodleWizard",
+        "message_id": "sample-spike-020",
+        "message": {
+          "text": "Welcome raiders, viewer 20!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:25.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "315",
+        "chatter_user_login": "orbitowl",
+        "chatter_user_name": "OrbitOwl",
+        "message_id": "sample-spike-021",
+        "message": {
+          "text": "Welcome raiders, viewer 21!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:25.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "412",
+        "chatter_user_login": "teaandtactics",
+        "chatter_user_name": "TeaAndTactics",
+        "message_id": "sample-spike-022",
+        "message": {
+          "text": "Welcome raiders, viewer 22!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:25.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "599",
+        "chatter_user_login": "cloudyday",
+        "chatter_user_name": "CloudyDay",
+        "message_id": "sample-spike-023",
+        "message": {
+          "text": "Welcome raiders, viewer 23!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:25.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "620",
+        "chatter_user_login": "bytesized",
+        "chatter_user_name": "ByteSized",
+        "message_id": "sample-spike-024",
+        "message": {
+          "text": "Welcome raiders, viewer 24!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:26.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "42",
+        "chatter_user_login": "mossymoth",
+        "chatter_user_name": "MossyMoth",
+        "message_id": "sample-spike-025",
+        "message": {
+          "text": "Welcome raiders, viewer 25!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:26.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "77",
+        "chatter_user_login": "pixelpilot",
+        "chatter_user_name": "PixelPilot",
+        "message_id": "sample-spike-026",
+        "message": {
+          "text": "Welcome raiders, viewer 26!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:26.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "103",
+        "chatter_user_login": "juniper",
+        "chatter_user_name": "Juniper",
+        "message_id": "sample-spike-027",
+        "message": {
+          "text": "Welcome raiders, viewer 27!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:26.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "208",
+        "chatter_user_login": "noodlewizard",
+        "chatter_user_name": "NoodleWizard",
+        "message_id": "sample-spike-028",
+        "message": {
+          "text": "Welcome raiders, viewer 28!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:27.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "315",
+        "chatter_user_login": "orbitowl",
+        "chatter_user_name": "OrbitOwl",
+        "message_id": "sample-spike-029",
+        "message": {
+          "text": "Welcome raiders, viewer 29!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:27.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "412",
+        "chatter_user_login": "teaandtactics",
+        "chatter_user_name": "TeaAndTactics",
+        "message_id": "sample-spike-030",
+        "message": {
+          "text": "Welcome raiders, viewer 30!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:27.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "599",
+        "chatter_user_login": "cloudyday",
+        "chatter_user_name": "CloudyDay",
+        "message_id": "sample-spike-031",
+        "message": {
+          "text": "Welcome raiders, viewer 31!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:27.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "620",
+        "chatter_user_login": "bytesized",
+        "chatter_user_name": "ByteSized",
+        "message_id": "sample-spike-032",
+        "message": {
+          "text": "Welcome raiders, viewer 32!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:28.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "42",
+        "chatter_user_login": "mossymoth",
+        "chatter_user_name": "MossyMoth",
+        "message_id": "sample-spike-033",
+        "message": {
+          "text": "Welcome raiders, viewer 33!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:28.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "77",
+        "chatter_user_login": "pixelpilot",
+        "chatter_user_name": "PixelPilot",
+        "message_id": "sample-spike-034",
+        "message": {
+          "text": "Welcome raiders, viewer 34!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:28.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "103",
+        "chatter_user_login": "juniper",
+        "chatter_user_name": "Juniper",
+        "message_id": "sample-spike-035",
+        "message": {
+          "text": "Welcome raiders, viewer 35!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:28.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "208",
+        "chatter_user_login": "noodlewizard",
+        "chatter_user_name": "NoodleWizard",
+        "message_id": "sample-spike-036",
+        "message": {
+          "text": "Welcome raiders, viewer 36!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:29.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "315",
+        "chatter_user_login": "orbitowl",
+        "chatter_user_name": "OrbitOwl",
+        "message_id": "sample-spike-037",
+        "message": {
+          "text": "Welcome raiders, viewer 37!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:29.250Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "412",
+        "chatter_user_login": "teaandtactics",
+        "chatter_user_name": "TeaAndTactics",
+        "message_id": "sample-spike-038",
+        "message": {
+          "text": "Welcome raiders, viewer 38!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:29.500Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "599",
+        "chatter_user_login": "cloudyday",
+        "chatter_user_name": "CloudyDay",
+        "message_id": "sample-spike-039",
+        "message": {
+          "text": "Welcome raiders, viewer 39!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:29.750Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
+        "chatter_user_id": "620",
+        "chatter_user_login": "bytesized",
+        "chatter_user_name": "ByteSized",
+        "message_id": "sample-spike-040",
+        "message": {
+          "text": "Welcome raiders, viewer 40!"
+        }
+      }
+    }
+  },
+  {
+    "metadata": {
+      "message_type": "notification",
+      "subscription_type": "channel.chat.message",
+      "message_timestamp": "2026-10-27T12:11:30.000Z"
+    },
+    "payload": {
+      "event": {
+        "broadcaster_user_id": "10000001",
+        "broadcaster_user_login": "samplechannel",
+        "broadcaster_user_name": "SampleChannel",
         "chatter_user_id": "103",
         "chatter_user_login": "juniper",
         "chatter_user_name": "Juniper",
@@ -3648,7 +4488,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:24.000Z"
+      "message_timestamp": "2026-10-27T12:11:34.000Z"
     },
     "payload": {
       "event": {
@@ -3669,7 +4509,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:28.000Z"
+      "message_timestamp": "2026-10-27T12:11:38.000Z"
     },
     "payload": {
       "event": {
@@ -3690,7 +4530,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:32.000Z"
+      "message_timestamp": "2026-10-27T12:11:42.000Z"
     },
     "payload": {
       "event": {
@@ -3711,7 +4551,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:36.000Z"
+      "message_timestamp": "2026-10-27T12:11:46.000Z"
     },
     "payload": {
       "event": {
@@ -3732,7 +4572,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:40.000Z"
+      "message_timestamp": "2026-10-27T12:11:50.000Z"
     },
     "payload": {
       "event": {
@@ -3753,7 +4593,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:44.000Z"
+      "message_timestamp": "2026-10-27T12:11:54.000Z"
     },
     "payload": {
       "event": {
@@ -3774,7 +4614,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:48.000Z"
+      "message_timestamp": "2026-10-27T12:11:58.000Z"
     },
     "payload": {
       "event": {
@@ -3795,7 +4635,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:52.000Z"
+      "message_timestamp": "2026-10-27T12:12:02.000Z"
     },
     "payload": {
       "event": {
@@ -3816,7 +4656,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:11:56.000Z"
+      "message_timestamp": "2026-10-27T12:12:06.000Z"
     },
     "payload": {
       "event": {
@@ -3837,7 +4677,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:00.000Z"
+      "message_timestamp": "2026-10-27T12:12:10.000Z"
     },
     "payload": {
       "event": {
@@ -3858,7 +4698,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:04.000Z"
+      "message_timestamp": "2026-10-27T12:12:14.000Z"
     },
     "payload": {
       "event": {
@@ -3879,7 +4719,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:08.000Z"
+      "message_timestamp": "2026-10-27T12:12:18.000Z"
     },
     "payload": {
       "event": {
@@ -3900,7 +4740,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:12.000Z"
+      "message_timestamp": "2026-10-27T12:12:22.000Z"
     },
     "payload": {
       "event": {
@@ -3921,7 +4761,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:16.000Z"
+      "message_timestamp": "2026-10-27T12:12:26.000Z"
     },
     "payload": {
       "event": {
@@ -3942,7 +4782,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:20.000Z"
+      "message_timestamp": "2026-10-27T12:12:30.000Z"
     },
     "payload": {
       "event": {
@@ -3963,7 +4803,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:24.000Z"
+      "message_timestamp": "2026-10-27T12:12:34.000Z"
     },
     "payload": {
       "event": {
@@ -3984,7 +4824,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:28.000Z"
+      "message_timestamp": "2026-10-27T12:12:38.000Z"
     },
     "payload": {
       "event": {
@@ -4005,7 +4845,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:32.000Z"
+      "message_timestamp": "2026-10-27T12:12:42.000Z"
     },
     "payload": {
       "event": {
@@ -4026,7 +4866,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:36.000Z"
+      "message_timestamp": "2026-10-27T12:12:46.000Z"
     },
     "payload": {
       "event": {
@@ -4047,7 +4887,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:40.000Z"
+      "message_timestamp": "2026-10-27T12:12:50.000Z"
     },
     "payload": {
       "event": {
@@ -4068,7 +4908,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:44.000Z"
+      "message_timestamp": "2026-10-27T12:12:54.000Z"
     },
     "payload": {
       "event": {
@@ -4089,7 +4929,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:48.000Z"
+      "message_timestamp": "2026-10-27T12:12:58.000Z"
     },
     "payload": {
       "event": {
@@ -4110,7 +4950,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:52.000Z"
+      "message_timestamp": "2026-10-27T12:13:02.000Z"
     },
     "payload": {
       "event": {
@@ -4131,7 +4971,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:12:56.000Z"
+      "message_timestamp": "2026-10-27T12:13:06.000Z"
     },
     "payload": {
       "event": {
@@ -4152,7 +4992,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:13:00.000Z"
+      "message_timestamp": "2026-10-27T12:13:10.000Z"
     },
     "payload": {
       "event": {
@@ -4173,7 +5013,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:13:04.000Z"
+      "message_timestamp": "2026-10-27T12:13:14.000Z"
     },
     "payload": {
       "event": {
@@ -4194,7 +5034,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:13:08.000Z"
+      "message_timestamp": "2026-10-27T12:13:18.000Z"
     },
     "payload": {
       "event": {
@@ -4215,7 +5055,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:13:12.000Z"
+      "message_timestamp": "2026-10-27T12:13:22.000Z"
     },
     "payload": {
       "event": {
@@ -4236,7 +5076,7 @@
     "metadata": {
       "message_type": "notification",
       "subscription_type": "channel.chat.message",
-      "message_timestamp": "2026-10-27T12:13:16.000Z"
+      "message_timestamp": "2026-10-27T12:13:26.000Z"
     },
     "payload": {
       "event": {
@@ -4254,4 +5094,3 @@
     }
   }
 ]
-

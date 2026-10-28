@@ -1,4 +1,4 @@
-import { createRequire } from "node:module";
+import { DatabaseSync } from "node:sqlite";
 
 const REPEAT_THRESHOLD = 3;
 const CHAT_SPIKE_MIN_MESSAGES = 5;
@@ -11,15 +11,15 @@ type RecapData = {
   chatRateSpike: string;
   raids: number;
   subs: number;
+  chatterNames?: string[];
 };
 type RecapDatabase = {
-  prepare(sql: string): { all(...params: unknown[]): unknown[] };
+  prepare(sql: string): { all(...params: any[]): any[] };
 };
-const require = createRequire(import.meta.url);
+type AnonymizedRecap = { data: RecapData; restoreNames(text: string): string };
 
 export async function getRecap(sessionId: string): Promise<string> {
-  const Sqlite = require("better-sqlite3") as new (filename: string) => RecapDatabase & { close(): void };
-  const database = new Sqlite("catchup.db");
+  const database = new DatabaseSync("catchup.db");
   try {
     const data = collectRecapData(sessionId, database);
     const template = formatRecap(data);
@@ -34,12 +34,63 @@ export function getRecapFromDatabase(sessionId: string, database: RecapDatabase)
   return formatRecap(collectRecapData(sessionId, database));
 }
 
+export function anonymizeRecapData(data: RecapData): AnonymizedRecap {
+  const names = new Map<string, string>();
+  for (const user of [...data.topChatters.map(({ user }) => user), ...(data.chatterNames ?? [])]) {
+    const key = user.toLocaleLowerCase();
+    if (!names.has(key)) names.set(key, `chatter ${names.size + 1}`);
+  }
+
+  const replacements = [...names].map(([name, alias]) => ({
+    name,
+    alias,
+    displayName: data.topChatters.find(({ user }) => user.toLocaleLowerCase() === name)?.user ?? name,
+  }));
+  const anonymizeText = (text: string): string =>
+    replacements
+      .slice()
+      .sort((a, b) => b.displayName.length - a.displayName.length)
+      .reduce(
+        (result, { displayName, alias }) =>
+          result.replace(new RegExp(escapeRegExp(displayName), "gi"), alias),
+        text,
+      );
+
+  return {
+    data: {
+      topChatters: data.topChatters.map(({ user, ...chatter }) => ({
+        ...chatter,
+        user: names.get(user.toLocaleLowerCase()) ?? user,
+      })),
+      repeatedPhrases: data.repeatedPhrases.map(({ phrase, ...repeat }) => ({
+        ...repeat,
+        phrase: anonymizeText(phrase),
+      })),
+      chatRateSpike: data.chatRateSpike,
+      raids: data.raids,
+      subs: data.subs,
+    },
+    restoreNames(text: string): string {
+      return replacements.reduce(
+        (result, { alias, displayName }) =>
+          result.replace(new RegExp(`\\b${escapeRegExp(alias)}\\b`, "gi"), displayName),
+        text,
+      );
+    },
+  };
+}
+
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function collectRecapData(sessionId: string, database: RecapDatabase): RecapData {
   const topChatters = database
     .prepare(
       `SELECT "user" AS user, COUNT(*) AS count
        FROM messages
        WHERE session_id = ? AND "user" IS NOT NULL AND "user" != ''
+         AND substr(text, 1, 1) != '!'
        GROUP BY "user"
        ORDER BY count DESC, user COLLATE NOCASE
        LIMIT 3`,
@@ -52,6 +103,7 @@ function collectRecapData(sessionId: string, database: RecapDatabase): RecapData
 
   const phraseCounts = new Map<string, number>();
   for (const { text } of messages) {
+    if (text.startsWith("!")) continue;
     const phrase = text.trim().replace(/\s+/g, " ");
     if (phrase) phraseCounts.set(phrase, (phraseCounts.get(phrase) ?? 0) + 1);
   }
@@ -97,6 +149,7 @@ function collectRecapData(sessionId: string, database: RecapDatabase): RecapData
     chatRateSpike: spike,
     raids: counts.get("channel.raid") ?? 0,
     subs: counts.get("channel.subscribe") ?? 0,
+    chatterNames: [...new Set(messages.map(({ user }) => user).filter((user): user is string => Boolean(user)))],
   };
 }
 
@@ -119,6 +172,7 @@ function formatRecap(data: RecapData): string {
 }
 
 async function polishRecap(data: RecapData, apiKey: string, fallback: string): Promise<string> {
+  const anonymized = anonymizeRecapData(data);
   try {
     const response = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
@@ -130,7 +184,7 @@ async function polishRecap(data: RecapData, apiKey: string, fallback: string): P
             {
               parts: [
                 {
-                  text: `Write a friendly Twitch stream recap using only these facts: ${JSON.stringify(data)}. Return exactly 3 short lines of plain text, with no bullets or numbering. Do not invent details. Keep the entire response under 450 characters.`,
+                  text: `Write a friendly Twitch stream recap using only these facts: ${JSON.stringify(anonymized.data)}. Use the supplied chatter labels as written. Return exactly 3 short lines of plain text, with no bullets or numbering. Do not invent details. Keep the entire response under 450 characters.`,
                 },
               ],
             },
@@ -148,7 +202,7 @@ async function polishRecap(data: RecapData, apiKey: string, fallback: string): P
     const text = result.candidates?.[0]?.content?.parts?.map(({ text: part }) => part ?? "").join("").trim();
     if (!text || text.length > 500) return fallback;
     const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-    return lines.length === 3 ? lines.join("\n") : fallback;
+    return lines.length === 3 ? anonymized.restoreNames(lines.join("\n")) : fallback;
   } catch {
     return fallback;
   }

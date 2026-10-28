@@ -1,31 +1,41 @@
-# catchup
+# Catch-Up Companion
 
-A minimal TypeScript app that receives Twitch EventSub notifications over WebSocket and logs them to the console. It does not need a public URL.
+Catch-Up Companion gives late-arriving Twitch viewers a short recap in chat and on an OBS overlay when they type `!catchup`. First-message overlay cards are optional.
 
-## Requirements
+## Architecture
 
-- Node.js 22 or newer
-- A Twitch user access token for the app's client ID, with these scopes:
-  - `user:read:chat`
-  - `moderator:read:followers`
-  - `channel:read:subscriptions`
-  - `user:write:chat`
-- The bot account must be a moderator in the channel for follow notifications. `BOT_ID` must match the user ID associated with `TWITCH_TOKEN`.
+1. `src/index.ts` validates Twitch settings, connects to EventSub over WebSocket, and coordinates recap triggers.
+2. `src/eventHandler.ts` saves chat and channel events to the current SQLite session.
+3. `src/recap.ts` calculates top chatters, repeated phrases, chat spikes, raids, and subscriptions.
+4. Optional Gemini polishing receives aggregate recap data with chatter names replaced by aliases; failures use the local template.
+5. `src/web.ts` sends recap events to `public/index.html`, which renders the transparent OBS card.
 
 ## Run
 
-1. Copy `.env.example` to `.env` and fill in the Twitch client ID, user access token, channel broadcaster ID, and bot user ID.
-2. Install dependencies: `npm install`
-3. Start in development mode: `npm run dev`
+1. Install Node.js 22+. Register a Twitch app with redirect URL `http://localhost:3000` in the [Developer Console](https://dev.twitch.tv/console/apps).
+2. Install the [Twitch CLI](https://dev.twitch.tv/docs/cli/) and configure the app's client ID and secret with `twitch configure`. Create a user token:
 
-To build and run the compiled app, use `npm run build` followed by `npm start`.
+   ```sh
+   twitch configure
+   twitch token -u -s 'user:read:chat moderator:read:followers channel:read:subscriptions user:write:chat'
+   ```
 
-For an OBS browser source, add `http://127.0.0.1:3000` as the URL. The page shows the recap card when someone uses `!catchup` and hides it after 15 seconds. Change the optional `PORT` environment variable if port 3000 is already in use.
+   Consent as the bot account. In broadcaster chat, run `/mod bot_username`; the broadcaster must authorize subscription access.
+3. Copy `.env.example` to `.env`. Set `TWITCH_CLIENT_ID`, `TWITCH_TOKEN`, `CHANNEL_ID`, and `BOT_ID`. Use numeric Twitch IDs from the [Get Users endpoint](https://dev.twitch.tv/docs/api/reference/#get-users). Keep tokens and secrets private.
+4. Run `npm install` and `npm run dev`. Startup checks variables, token validity, app/user IDs, and scopes. Production: `npm run build`, then `npm start`.
 
-## Replay recorded chat
+Add `http://127.0.0.1:3000` as an OBS browser source. `AUTO_RECAP=true` enables first-message cards with a five-minute global cooldown; default is `false`.
 
-Run the included sample at normal speed with `npm run replay`. Pass a JSON file and optional playback speed multiplier to replay other captures, for example `npm run replay -- samples/chat-events.json 10` for 10× speed. Replay files are JSON arrays of EventSub notification messages. Each replay gets a new SQLite session ID, which is printed when playback starts.
+## Demo mode
 
-Each EventSub notification is printed with its subscription type and JSON event payload. Twitch must be able to validate the token's scopes; the app creates each subscription after the WebSocket session is welcomed.
+Run `npm run replay -- samples/chat-events.json 10` to replay sample EventSub events at 10× speed. It writes to SQLite and logs events without Twitch credentials. Live replies and overlays need a Twitch connection.
 
-To enable optional recap polishing, set `GEMINI_API_KEY` in `.env`. Without it, the bot uses the plain recap template. When set, recap metrics and repeated chat text are sent to Google's Gemini API; errors and timeouts fall back to the template.
+Set `SEED_DEMO_FILE=samples/chat-events.json` to load sample events into the current live session at startup, with the last event timestamp shifted to now.
+
+## Privacy
+
+Chat and channel events are stored in local `catchup.db` and printed to the console. With `GEMINI_API_KEY`, recap metrics and repeated phrases go to Gemini. Known usernames are aliased, but phrase contents are still sent. Without the key, recaps stay local.
+
+## Built with Codex
+
+Codex helped build the EventSub receiver, SQLite storage, recap and tests, chat reply, Gemini fallback, OBS source, and replay tool. It also helped refine setup, privacy, overlay design, and startup validation. Git tracks the work.

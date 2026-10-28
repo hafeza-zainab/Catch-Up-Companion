@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { readFile } from "node:fs/promises";
 import { handleEventNotification } from "./eventHandler.js";
 import { getRecap } from "./recap.js";
 import { publishRecap, startWebServer } from "./web.js";
@@ -17,21 +18,26 @@ type EventSubMessage = {
   };
 };
 
+type SeedEvent = { subscriptionType: string; event: Record<string, unknown>; timestamp: number };
+
 const sessionId = randomUUID();
 const catchupCooldowns = new Map<string, number>();
+const autoRecapSeenUsers = new Set<string>();
 const CATCHUP_COOLDOWN_MS = 60_000;
+const AUTO_RECAP_COOLDOWN_MS = 5 * 60_000;
+const autoRecapEnabled = process.env.AUTO_RECAP?.toLowerCase() === "true";
+let lastAutoRecapAt = 0;
 
-const requiredEnv = (name: string): string => {
-  const value = process.env[name];
-  if (!value) throw new Error(`Missing required environment variable: ${name}`);
-  return value;
-};
-
-const clientId = requiredEnv("TWITCH_CLIENT_ID");
-const token = requiredEnv("TWITCH_TOKEN");
-const channelId = requiredEnv("CHANNEL_ID");
-const botId = requiredEnv("BOT_ID");
-startWebServer();
+const clientId = process.env.TWITCH_CLIENT_ID?.trim() ?? "";
+const token = process.env.TWITCH_TOKEN?.trim() ?? "";
+const channelId = process.env.CHANNEL_ID?.trim() ?? "";
+const botId = process.env.BOT_ID?.trim() ?? "";
+const REQUIRED_SCOPES = [
+  "user:read:chat",
+  "moderator:read:followers",
+  "channel:read:subscriptions",
+  "user:write:chat",
+];
 
 const subscriptions: EventSubscription[] = [
   {
@@ -89,6 +95,7 @@ async function replyWithRecap(userId: string, parentMessageId: string): Promise<
   try {
     const recap = await getRecap(sessionId);
     publishRecap(recap);
+    const chatMessage = recap.split(/\r?\n/).join(" | ").slice(0, 450);
     const response = await fetch("https://api.twitch.tv/helix/chat/messages", {
       method: "POST",
       headers: {
@@ -99,7 +106,7 @@ async function replyWithRecap(userId: string, parentMessageId: string): Promise<
       body: JSON.stringify({
         broadcaster_id: channelId,
         sender_id: botId,
-        message: recap.slice(0, 500),
+        message: chatMessage,
         reply_parent_message_id: parentMessageId,
       }),
     });
@@ -117,6 +124,100 @@ async function replyWithRecap(userId: string, parentMessageId: string): Promise<
     catchupCooldowns.delete(userId);
     console.error("Failed to reply with recap:", error);
   }
+}
+
+async function showAutoRecap(userId: string, isCatchupCommand: boolean): Promise<void> {
+  if (!autoRecapEnabled || userId === botId || autoRecapSeenUsers.has(userId)) return;
+  autoRecapSeenUsers.add(userId);
+  if (isCatchupCommand) return;
+
+  const now = Date.now();
+  if (now - lastAutoRecapAt < AUTO_RECAP_COOLDOWN_MS) return;
+
+  lastAutoRecapAt = now;
+  try {
+    publishRecap(await getRecap(sessionId));
+  } catch (error) {
+    lastAutoRecapAt = 0;
+    console.error("Failed to show automatic recap:", error);
+  }
+}
+
+async function validateStartupConfiguration(): Promise<void> {
+  const requiredVariables = ["TWITCH_CLIENT_ID", "TWITCH_TOKEN", "CHANNEL_ID", "BOT_ID"];
+  const missingVariables = requiredVariables.filter((name) => !process.env[name]?.trim());
+  if (missingVariables.length) {
+    throw new Error(`Missing required environment variable(s): ${missingVariables.join(", ")}. Set them in .env.`);
+  }
+
+  let response: Response;
+  try {
+    response = await fetch("https://id.twitch.tv/oauth2/validate", {
+      headers: { Authorization: `OAuth ${token}` },
+    });
+  } catch (error) {
+    throw new Error(`Could not reach Twitch to validate TWITCH_TOKEN: ${error instanceof Error ? error.message : String(error)}`);
+  }
+  if (!response.ok) {
+    throw new Error(`TWITCH_TOKEN is invalid or expired (Twitch returned HTTP ${response.status}). Generate a new user access token.`);
+  }
+
+  const validation = (await response.json()) as {
+    client_id?: string;
+    user_id?: string;
+    scopes?: string[];
+  };
+  if (validation.client_id !== clientId) {
+    throw new Error("TWITCH_TOKEN belongs to a different Twitch app. Use a token generated with TWITCH_CLIENT_ID.");
+  }
+  if (validation.user_id !== botId) {
+    throw new Error("BOT_ID must match the Twitch user ID that authorized TWITCH_TOKEN.");
+  }
+
+  const grantedScopes = new Set(validation.scopes ?? []);
+  const missingScopes = REQUIRED_SCOPES.filter((scope) => !grantedScopes.has(scope));
+  if (missingScopes.length) {
+    throw new Error(`TWITCH_TOKEN is missing required scope(s): ${missingScopes.join(", ")}. Generate a new token with all required scopes.`);
+  }
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+async function seedDemoEvents(filePath: string): Promise<void> {
+  const parsed: unknown = JSON.parse(await readFile(filePath, "utf8"));
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    throw new Error("SEED_DEMO_FILE must point to a non-empty JSON array of EventSub notifications.");
+  }
+
+  const notifications: SeedEvent[] = parsed.map((value, index) => {
+    if (!isRecord(value) || !isRecord(value.metadata) || !isRecord(value.payload)) {
+      throw new Error(`SEED_DEMO_FILE entry ${index + 1} is not a valid EventSub notification.`);
+    }
+    const { metadata, payload } = value;
+    if (
+      metadata.message_type !== "notification" ||
+      typeof metadata.subscription_type !== "string" ||
+      typeof metadata.message_timestamp !== "string" ||
+      !isRecord(payload.event)
+    ) {
+      throw new Error(`SEED_DEMO_FILE entry ${index + 1} is not a valid EventSub notification.`);
+    }
+
+    const timestamp = Date.parse(metadata.message_timestamp);
+    if (Number.isNaN(timestamp)) {
+      throw new Error(`SEED_DEMO_FILE entry ${index + 1} has an invalid timestamp.`);
+    }
+    return { subscriptionType: metadata.subscription_type, event: payload.event, timestamp };
+  });
+
+  const timestampOffset = Date.now() - notifications[notifications.length - 1].timestamp;
+  for (const notification of notifications) {
+    const shiftedTimestamp = new Date(notification.timestamp + timestampOffset).toISOString();
+    await handleEventNotification(sessionId, notification.subscriptionType, notification.event, shiftedTimestamp);
+  }
+  console.log(`Seeded ${notifications.length} demo events from ${filePath} into live session ${sessionId}.`);
 }
 
 function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
@@ -141,6 +242,7 @@ function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
           event,
           message.metadata.message_timestamp,
           replyWithRecap,
+          showAutoRecap,
         );
       } else if (messageType === "session_reconnect") {
         const reconnectUrl = message.payload.session?.reconnect_url;
@@ -164,4 +266,20 @@ function connect(url = "wss://eventsub.wss.twitch.tv/ws"): void {
   socket.addEventListener("error", (event) => console.error("EventSub WebSocket error:", event));
 }
 
-connect();
+async function start(): Promise<void> {
+  try {
+    await validateStartupConfiguration();
+    const seedFile = process.env.SEED_DEMO_FILE?.trim();
+    if (seedFile) await seedDemoEvents(seedFile);
+  } catch (error) {
+    console.error(`Startup check failed: ${error instanceof Error ? error.message : String(error)}`);
+    process.exitCode = 1;
+    return;
+  }
+
+  console.log("Twitch token and required scopes validated.");
+  startWebServer();
+  connect();
+}
+
+void start();

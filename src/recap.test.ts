@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
+import { DatabaseSync } from "node:sqlite";
 import { test } from "node:test";
-import { getRecapFromDatabase } from "./recap.js";
+import { anonymizeRecapData, getRecapFromDatabase } from "./recap.js";
 
 test("recap summarizes chatters, repeats, spikes, raids, and subs for one session", () => {
   const messages = [
@@ -39,4 +40,72 @@ test("recap summarizes chatters, repeats, spikes, raids, and subs for one sessio
   assert.match(recap, /Chat-rate spike: 6 messages\/min/);
   assert.match(recap, /Raids: 1; subs: 1/);
   assert.equal(recap.split("\n").length, 4);
+});
+
+test("Gemini recap data uses chatter aliases and restores names in the final text", () => {
+  const anonymized = anonymizeRecapData({
+    topChatters: [
+      { user: "Alice", count: 12 },
+      { user: "Bob", count: 8 },
+    ],
+    repeatedPhrases: [{ phrase: "Alice and Bob did it again", count: 3 }],
+    chatRateSpike: "none",
+    raids: 0,
+    subs: 0,
+    chatterNames: ["Alice", "Bob", "Cara"],
+  });
+
+  assert.deepEqual(anonymized.data.topChatters, [
+    { user: "chatter 1", count: 12 },
+    { user: "chatter 2", count: 8 },
+  ]);
+  assert.deepEqual(anonymized.data.repeatedPhrases, [
+    { phrase: "chatter 1 and chatter 2 did it again", count: 3 },
+  ]);
+  assert.equal(JSON.stringify(anonymized.data).includes("Alice"), false);
+  assert.equal(JSON.stringify(anonymized.data).includes("Cara"), false);
+  assert.equal(
+    anonymized.restoreNames("Chatter 1 and chatter 2 were there."),
+    "Alice and Bob were there.",
+  );
+});
+
+test("messages starting with ! do not count toward top chatters or repeated phrases", () => {
+  const database = new DatabaseSync(":memory:");
+  try {
+    database.exec(`
+      CREATE TABLE messages (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id TEXT NOT NULL,
+        "user" TEXT,
+        text TEXT NOT NULL,
+        ts TEXT NOT NULL
+      );
+      CREATE TABLE events (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id TEXT NOT NULL,
+        type TEXT NOT NULL,
+        "user" TEXT,
+        ts TEXT NOT NULL
+      );
+    `);
+
+    const insertMessage = database.prepare(
+      'INSERT INTO messages (session_id, "user", text, ts) VALUES (?, ?, ?, ?)',
+    );
+    for (let index = 0; index < 4; index++) {
+      insertMessage.run("session", "CommandUser", "!catchup", `2025-01-01T12:00:0${index}.000Z`);
+    }
+    for (let index = 0; index < 3; index++) {
+      insertMessage.run("session", "RegularUser", "great play", `2025-01-01T12:01:0${index}.000Z`);
+    }
+
+    const recap = getRecapFromDatabase("session", database);
+    assert.match(recap, /Top chatters: RegularUser \(3\)/);
+    assert.doesNotMatch(recap, /CommandUser/);
+    assert.match(recap, /"great play" ×3/);
+    assert.doesNotMatch(recap, /"!catchup"/);
+  } finally {
+    database.close();
+  }
 });

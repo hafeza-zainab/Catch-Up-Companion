@@ -8,17 +8,16 @@
     "start": "node --env-file=.env dist/index.js",
     "build": "tsc",
     "test": "node --import tsx --test src/recap.test.ts",
+    "recap": "node --import tsx src/recap-latest.ts",
     "replay": "node --import tsx src/replay.ts"
   },
   "engines": {
     "node": ">=22"
   },
   "dependencies": {
-    "better-sqlite3": "^12.2.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
     "@types/express": "^5.0.3",
     "@types/node": "^22.15.0",
     "tsx": "^4.19.0",

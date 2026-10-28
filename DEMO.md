@@ -1,0 +1,14 @@
+# Catch-Up Companion demo script
+
+**Run time: 2:45**
+
+Before recording, start the app with the channel credentials configured, keep the Twitch channel chat and OBS preview ready, and add `http://127.0.0.1:3000` as an OBS browser source. Use the channel's normal live setup; the command replies in chat and sends the same recap to the overlay. Have a few minutes of chat activity so the recap has something to summarize.
+
+| Time | On-screen actions | Voiceover |
+| --- | --- | --- |
+| **0:00–0:20 — The problem** | Show a stream in progress, then bring up Twitch chat with a new viewer message such as “What did I miss?” Pause on the busy chat and active gameplay. | “People often arrive after a stream is already underway. The chat has moved on, and a new viewer may not know what just happened or what everyone is talking about.” |
+| **0:20–1:00 — Ask for a catch-up** | Show the live Twitch chat for your channel. Type `!catchup` from a viewer account. Keep the chat visible while Catch-Up Companion replies as the bot. Briefly highlight the reply and its recap lines. | “A viewer can type `!catchup` in my channel. The bot looks at this stream session and replies in chat with a short recap, so the viewer can get oriented without interrupting the stream.” |
+| **1:00–1:30 — OBS overlay** | Switch to the OBS preview with the browser source visible. Trigger `!catchup` again from another viewer, if needed. Show the recap card fade in over the scene, its progress bar, and then disappear after 15 seconds. | “The same recap appears as a card over the stream. It stays up briefly, then clears on its own so the scene is visible again.” |
+| **1:30–2:00 — How the recap works** | Show the recap in chat or the overlay, then switch briefly to the code in `src/recap.ts`. Point to the top chatter query, repeated phrase counting, per-minute message counts, and the Gemini call with its fallback. | “The app counts the most active chatters, repeated phrases, and busy minutes, along with raids and subscriptions. Gemini can turn those facts into three short lines. If it is unavailable or returns an unusable reply, the plain template is used instead.” |
+| **2:00–2:30 — Built with Codex** | Open this project’s Codex session or task history and show the work on Catch-Up Companion. Then show a terminal at the project root and run `git log --oneline -8`. Scroll through the commits covering the recap, chat command, Gemini option, OBS source, and replay tool. | “I built this project with Codex. Here is the Codex work on the project, alongside the Git history showing the recap, chat reply, Gemini option, and OBS source being added.” |
+| **2:30–2:45 — Impact** | Return to the live stream and chat. Leave the recap card visible for a moment, then end on the stream with chat still moving. | “For streamers, this gives late arrivals a quick way into the conversation, while keeping the stream moving.” |
