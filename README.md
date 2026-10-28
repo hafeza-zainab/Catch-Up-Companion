@@ -30,12 +30,12 @@ Add `http://127.0.0.1:3000` as an OBS browser source. `AUTO_RECAP=true` enables 
 
 Run `npm run replay -- samples/chat-events.json 10` to replay sample EventSub events at 10× speed. It writes to SQLite and logs events without Twitch credentials. Live replies and overlays need a Twitch connection.
 
-Set `SEED_DEMO_FILE=samples/chat-events.json` to load sample events into the current live session at startup, with the last event timestamp shifted to now.
+The demo recap uses seeded sample chat; real Twitch chat is also supported. Set `SEED_DEMO_FILE=samples/chat-events.json` to seed the current live session at startup, shifting the last event to now.
 
 ## Privacy
 
-Chat and channel events are stored in local `catchup.db` and printed to the console. With `GEMINI_API_KEY`, recap metrics and repeated phrases go to Gemini. Known usernames are aliased, but phrase contents are still sent. Without the key, recaps stay local.
+Chat and channel events are stored in `catchup.db` and logged. Gemini is off unless `GEMINI_API_KEY` is set. If enabled, anonymized chat text and metrics are sent to Google; usernames are aliased first. Without the key, recaps stay local.
 
 ## Built with Codex
 
-Codex helped build the EventSub receiver, SQLite storage, recap and tests, chat reply, Gemini fallback, OBS source, and replay tool. It also helped refine setup, privacy, overlay design, and startup validation. Git tracks the work.
+Codex helped build the EventSub receiver, SQLite storage, recap and tests, chat reply, Gemini fallback, OBS source, and replay tool. It also helped refine setup, privacy, overlay design, and startup validation. Work continued in a second Codex session after usage limits. Git tracks the work.

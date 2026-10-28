@@ -129,7 +129,11 @@ function collectRecapData(sessionId: string, database: RecapDatabase): RecapData
     const average = messages.length / elapsedMinutes;
     const [peakMinute, peakCount] = [...minuteCounts].sort((a, b) => b[1] - a[1])[0];
     if (peakCount >= CHAT_SPIKE_MIN_MESSAGES && peakCount >= average * 2) {
-      spike = `${peakCount} messages/min at ${new Date(peakMinute * 60_000).toISOString()}`;
+      const localTime = new Date(peakMinute * 60_000).toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+      });
+      spike = `${peakCount} messages/min at ${localTime}`;
     }
   }
 

@@ -37,7 +37,11 @@ test("recap summarizes chatters, repeats, spikes, raids, and subs for one sessio
   const recap = getRecapFromDatabase("fake-session", database);
   assert.match(recap, /Top chatters: Alice \(3\), Bob \(2\), Cara \(1\)/);
   assert.match(recap, /"Hello chat" ×3/);
-  assert.match(recap, /Chat-rate spike: 6 messages\/min/);
+  const localSpikeTime = new Date(Date.UTC(2025, 0, 1, 12, 0)).toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+  assert.ok(recap.includes(`Chat-rate spike: 6 messages/min at ${localSpikeTime}`));
   assert.match(recap, /Raids: 1; subs: 1/);
   assert.equal(recap.split("\n").length, 4);
 });

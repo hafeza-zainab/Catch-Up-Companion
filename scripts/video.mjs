@@ -11,6 +11,11 @@ const outputFile = path.join(demo, "final.mp4");
 const MAX_DURATION_SECONDS = 175;
 const fps = 30;
 const audioRate = 48_000;
+const windowsFont = process.platform === "win32"
+  ? path.join(process.env.WINDIR ?? "C:/Windows", "Fonts", "arial.ttf")
+    .replaceAll("\\", "/")
+    .replace(":", "\\:")
+  : null;
 
 function run(command, args) {
   const result = spawnSync(command, args, {
@@ -45,8 +50,9 @@ function escapeConcatPath(file) {
 
 function imageFilter(subtitle = false) {
   const base = `scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,setsar=1,fps=${fps},format=yuv420p`;
+  const fontOption = windowsFont ? `fontfile='${windowsFont}':` : "";
   return subtitle
-    ? `${base},drawtext=text='Sample data shown for demonstration':fontcolor=white:fontsize=32:box=1:boxcolor=black@0.78:boxborderw=16:x=(w-text_w)/2:y=h-110`
+    ? `${base},drawtext=${fontOption}text='Sample data shown for demonstration':fontcolor=white:fontsize=32:box=1:boxcolor=black@0.78:boxborderw=16:x=(w-text_w)/2:y=h-110`
     : base;
 }
 
