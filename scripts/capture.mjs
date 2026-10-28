@@ -7,15 +7,15 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const framesDirectory = path.join(root, "demo", "frames");
 const sampleFile = path.join(root, "samples", "chat-events.json");
-const isWindows = process.platform === "win32";
-const npmCommand = isWindows ? "npm.cmd" : "npm";
+const npmCommand = process.env.npm_execpath ? process.execPath : process.platform === "win32" ? "npm.cmd" : "npm";
+const npmPrefixArgs = process.env.npm_execpath ? [process.env.npm_execpath] : [];
 
 function runNpm(args, options = {}) {
   return new Promise((resolve, reject) => {
     const command = `npm ${args.join(" ")}`;
-    const child = spawn(npmCommand, args, {
+    const child = spawn(npmCommand, [...npmPrefixArgs, ...args], {
       cwd: root,
-      shell: isWindows,
+      shell: false,
       stdio: ["ignore", "pipe", "pipe"],
       ...options,
     });
@@ -92,6 +92,7 @@ async function main() {
         AUTO_RECAP: "false",
       },
       stdio: "inherit",
+      shell: false,
     },
   );
   let captureServer;
