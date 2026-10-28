@@ -9,7 +9,11 @@
     "build": "tsc",
     "test": "node --import tsx --test src/recap.test.ts",
     "recap": "node --import tsx src/recap-latest.ts",
-    "replay": "node --import tsx src/replay.ts"
+    "replay": "node --import tsx src/replay.ts",
+    "capture": "node scripts/capture.mjs",
+    "cards": "node scripts/cards.mjs",
+    "video": "node scripts/video.mjs",
+    "voice": "pwsh.exe -NoProfile -ExecutionPolicy Bypass -File scripts/voice.ps1"
   },
   "engines": {
     "node": ">=22"
